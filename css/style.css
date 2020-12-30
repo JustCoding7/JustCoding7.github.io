@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+
+.loader_bg {
+	position: fixed;
+	z-index: 999999;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.loader {
+	border: 0 solid transparent;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: calc(50vh - 75px);
+	left: calc(50vw - 75px);
+}
+
+.loader:before, .loader:after {
+	content: '';
+	border: 1em solid #ff5733;
+	border-radius: 50%;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: loader 2s linear infinite;
+	opacity: 0;
+}
+
+.loader:before {
+	animation-delay: 0.5s;
+}
+
+@keyframes loader {
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	user-select: none;
+	text-decoration: none;
+}
+
+body {
+	background: crimson;
+}
+
+[data-scroll] {
+  	transition: all 2s;
+}
+[data-scroll="in"] {
+  	opacity: 1;
+  	transform: translateX(0);
+}
+[data-scroll="out"] {
+	opacity: 0;
+	transform: translateX(-200px);
+}
+
+
+.wave-section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section .wave {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg,#008780,#037ecf); /* #4973ff */
+}
+
+section .wave span {
+	position: absolute;
+	width: 325vh;
+	height: 325vh;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%,-75%);
+	background: #000;
+}
+
+section .wave span:nth-child(1) {
+	animation: animate 5s linear infinite;
+	border-radius: 45%;
+	background: rgba(20, 20, 20, 0.9);
+}
+
+section .wave span:nth-child(2) {
+	animation: animate 10s linear infinite;
+	border-radius: 40%;
+	background: rgba(20, 20, 20, 0.5);
+}
+
+section .wave span:nth-child(3) {
+	animation: animate 15s linear infinite;
+	border-radius: 42.5%;
+	background: rgba(20, 20, 20, 0.5);
+}
+
+@keyframes animate {
+	0%{
+		transform: translate(-50%,-75%) rotate(0deg);
+	}
+	100%{
+		transform: translate(-50%,-75%) rotate(360deg);
+	}
+}
+
+section .wave-content {
+	position: relative;
+	z-index: 1;
+	color: deepskyblue;
+	font-size: 30px;
+}
+
+.welcome {
+	font-family: 'Langar', cursive;
+	letter-spacing: 0.8px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+	.welcome:hover {
+		color: crimson;
+	}
+}
+
+/* btn hover effect */
+
+.btn {
+	padding: 15px 60px;
+	display: flex;
+	color: crimson;
+	border: 2px solid crimson;
+	margin: 20px;
+	font-size: 20px;
+	position: absolute;
+	top: 55vh;
+	right: auto;
+	left: auto;
+	transition: color .8s ease;
+	z-index: 1;
+	font-family: 'Langar', cursive;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: crimson;
+	width: 0;
+	transition: all .5s ease;
+	z-index: -1;
+}
+
+.btn:hover::before {
+	width: 100%;
+	left: 0;
+	right: auto;
+}
+
+.btn:hover {
+	color: black;
+}
+
+
+/* about us styling */
+
+#about {
+	background-image: linear-gradient(to top right,#008780,#037ecf); /* this will make bg as the upper wave */
+	display: block;
+	padding: 20px 80px 80px 10px;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+
+.left-side img {
+	width: 80%;
+	height: 100%;
+	margin-left: 30px;
+}
+
+.right-side span {
+	display: block;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	width: 180px;
+	height: 2px;
+	background: red;
+}
+
+.right-side h2 {
+	position: relative;
+	margin-top: -10px;
+	font-size: 20px;
+	font-weight: 600;
+	color: rgba(3, 3, 3, .7);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.right-side .name {
+	width: 200px;
+	height: 40px;
+	background: grey;
+	box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.55);
+	margin-top: 20px;
+	margin-left: 100px;
+	margin-bottom: 15px;
+	border-radius: 30px;
+}
+
+.right-side .name h1 {
+	padding: 10px 10px;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.right-side p {
+	font-size: 15px;
+	font-weight: 600;
+	color: rgba(18,1,12,.9);
+}
+
+.icons {
+	position: relative;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.icons .fa {
+	width: 50px;
+	height: 50px;
+	padding: 15px;
+	background: #fff;
+	border-radius: 50%;
+	color: #222;
+	font-size: 20px;
+	display: inline-block;
+}
+
+@media only screen and (min-width: 1000px){
+
+	#about {
+		display: flex;
+		height: 100vh;
+	}
+
+	.container {
+		position: relative;
+		width: 800px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.left-side {
+		position: relative;
+		width: 300px;
+	}
+
+	.left-side img {
+		width: 100%;
+		height: 100%;
+		margin-left: 0;
+	}
+
+	.right-side {
+		position: relative;
+		width: 300px;
+		margin-top: 75px;
+		margin-left: 30px;
+	}
+
+	.right-side h2 {
+		margin-top: -100px;
+		text-align: left;
+	}
+
+	.right-side .name {
+		margin-left: -100px;
+		margin-bottom: 30px;
+		cursor: pointer;
+	}
+
+	.right-side .name:hover {
+		background: crimson;
+	}
+
+	.right-side span {
+		margin-left: 0;
+	}
+
+	.right-side p {
+		font-size: 18px;
+	}
+
+	.icons {
+		position: relative;
+		margin-top: 10px;
+	}
+
+	.icons .fa {
+		width: 50px;
+		height: 50px;
+		padding: 15px;
+	}
+
+	.icons .fa:hover {
+		background: #000;
+		color: #fff;
+		transition: 0.5s;
+		cursor: pointer;
+	}
+
+}
+
+/* this media query is for galaxy note 2 */
+
+@media only screen and (max-width: 360px){
+
+	.right-side p {
+		font-size: 10px;
+	}
+}
+
+
+
+/* Projects styling */
+
+#project {
+	background: linear-gradient(to bottom,#222,#000);
+	height: auto;
+	display: block;
+	position: relative;
+}
+
+.projectspan {
+	margin: 20px 40px;
+}
+
+.projectcontainer {
+	margin: 20px 40px;
+}
+
+.projectheading {
+	font-size: 60px;
+	color: crimson;
+	text-align: center;
+	font-family: 'Hanalei Fill', cursive;
+	font-weight: 100;
+}
+
+.projectheading span {
+	font-family: 'Hanalei Fill', cursive;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+.projects {
+	padding: 10px 5px;
+	display: flex;
+	justify-content: center;
+	margin: 20px 80px;
+}
+
+.project-profile {
+	flex-basis: 260px;
+}
+
+.project-profile .project-img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	filter: grayscale(100%);
+	cursor: pointer;
+	transition: 400ms;
+}
+
+.project-profile:hover .project-img {
+	filter: grayscale(0);
+}
+
+.project-name {
+	margin-top: 20px;
+	font-size: 31px;
+	color: deepskyblue;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-family: 'Hanalei Fill', cursive;
+	letter-spacing: 2px;
+	font-weight: 100;
+}
+
+.project-profile h5 {
+	font-size: 18px;
+	font-weight: 100;
+	color: crimson;
+	font-weight: 600;
+	font-family: 'Langar', cursive;
+}
+
+.project-profile p {
+	font-size: 14px;
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 50px;
+	color: deepskyblue;
+}
+
+.icons-project {
+	position: relative;
+	margin-top: -60px;
+	text-align: left;
+	margin-bottom: 60px;
+}
+
+.icons-project .fa {
+	width: 50px;
+	height: 50px;
+	padding: 15px;
+	background: #fff;
+	border-radius: 50%;
+	color: #222;
+	font-size: 20px;
+	display: inline-block;
+}
+
+@media only screen and (min-width: 1000px) {
+
+	.icons-project {
+		margin-top: -20px;
+		margin-bottom: 30px;
+	}
+
+	.icons-project .fa:hover {
+		background: crimson;
+		color: #fff;
+		cursor: pointer;
+	}
+}
+
+/* Important */
+
+@media only screen and (max-width: 1150px) {
+
+	.projects {
+		flex-direction: column;
+	}
+
+	.project-profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.project-profile p {
+		text-align: center;
+		margin: 20px 60px 80px 60px;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+
+	.projectheading {
+		font-size: 40px;
+		color: crimson;
+		text-align: center;
+	}
+
+	.projectheading span {
+		font-size: 15px;
+	}
+
+	.projects {
+		margin: 20px 0;
+	}
+
+	.project-profile p {
+		margin: 20px 10px 80px 10px;
+	}
+}
+
+@media only screen and (min-width: 1151px) {
+	#project {
+		height: 110vh;
+	}
+}
+
+/* Our team styling */
+
+#team {
+	background: linear-gradient(to top right,#008780,#037ecf);
+	height: auto;
+	display: block;
+	position: relative;
+}
+
+.teamspan {
+	margin: 20px 40px;
+}
+
+.teamcontainer {
+	margin: 20px 40px;
+}
+
+.teamheading {
+	font-size: 60px;
+	color: crimson;
+	text-align: center;
+	font-family: 'Hanalei Fill', cursive;
+	font-weight: 100;
+}
+
+.teamheading span {
+	font-family: 'Hanalei Fill', cursive;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+.profiles {
+	padding: 20px 10px;
+	display: flex;
+	justify-content: center;
+	margin: 20px 80px;
+}
+
+.profile {
+	flex-basis: 260px;
+}
+
+.profile .profile-img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	filter: grayscale(100%);
+	cursor: pointer;
+	transition: 400ms;
+}
+
+.profile:hover .profile-img {
+	filter: grayscale(0);
+}
+
+.user-name {
+	margin-top: 30px;
+	font-size: 35px;
+	font-family: 'Hanalei Fill', cursive;
+}
+
+.profile h5 {
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	color: red;
+}
+
+.profile p {
+	font-size: 16px;
+	margin-top: 20px;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.btn-profile {
+	margin-bottom: 20px;
+	border: 2px solid black;
+	padding: 10px;
+	text-align: center;
+	color: black;
+	font-size: 14px;
+	transition: color .3s ease-in;
+}
+
+/* Important */
+
+@media only screen and (max-width: 1150px) {
+
+	.profiles {
+		flex-direction: column;
+	}
+
+	.profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.profile p {
+		text-align: center;
+		margin: 20px 60px 50px 60px;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.teamheading {
+		font-size: 40px;
+		color: crimson;
+		text-align: center;
+	}
+
+	.teamheading span {
+		font-size: 15px;
+	}
+
+	.profiles {
+		margin: 20px 0;
+	}
+
+	.profiles p {
+		margin: 20px 10px 50px 10px;
+	}
+}
+
+@media only screen and (min-width: 1151px) {
+	#team {
+		height: 100vh;
+	}
+
+	.btn-profile:hover {
+		border: 2px solid crimson;
+		color: deepskyblue;
+		background: black;
+	}
+}
+
+/* footer styling */
+
+#footer {
+	background: #000;
+	display: block;
+	height: 100px;
+}
+
+.footerinfo {
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	color: crimson;
+	text-transform: uppercase;
+}
+
+.footerinfo a, i {
+	color: deepskyblue;
+}
+
+@media only screen and (min-width: 1000px) {
+
+	.footerinfo a:hover , i:hover {
+		color: lime;
+	}
+
+}
+
+.star {
+	color: deepskyblue;
+	margin-bottom: 10px;
+	height: auto;
+	text-align: center;
+}
