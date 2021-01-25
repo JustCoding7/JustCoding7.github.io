@@ -666,7 +666,116 @@ section .wave-content {
 #footer {
 	background: #000;
 	display: block;
-	height: 100px;
+	height: auto;
+}
+
+.contactsection {
+	width: 100%;
+	height: 100vh;
+	background-color: #000;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@media only screen and (min-width: 1000px) {
+	.conheading {
+		color: deepskyblue;
+		font-size: 30px;
+		margin: 10px 20px;
+	}
+}
+
+.conheading {
+	color: deepskyblue;
+	font-size: 30px;
+}
+
+.concontainer {
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	box-shadow: 0px 0px 20px #00000010;
+	background-color: white;
+	border-radius: 18px;
+	margin-bottom: 3px;
+}
+
+.form-group {
+	width: 100%;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+	width: 100%;
+	padding: 5px;
+	font-size: 18px;
+	border: 1px solid chocolate;
+}
+
+textarea {
+	resize: vertical;
+}
+
+button[type = "submit"] {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 20px;
+	font-size: 24px;
+	border-radius: 8px;
+	color: rgb(27, 166, 247);
+	background-color: black;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: .3s ease background-color;
+}
+
+button[type = "submit"]:hover {
+	background-color: rgb(610, 020, 016);
+}
+
+#constatus {
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
+	padding: 10px;
+	margin: 0 auto;
+	border-radius: 8px;
+}
+
+#constatus.success {
+	background-color: rgb(211, 250, 153);
+	animation: status 4s ease forwards; 
+}
+
+#constatus.error {
+	background-color: rgb(250, 129, 92);
+	color: red;
+	animation: status 4s ease forwards;
+}
+
+@keyframes status {
+	0%{
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	90%{
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	100%{
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 
 .footerinfo {
@@ -691,7 +800,6 @@ section .wave-content {
 
 .star {
 	color: deepskyblue;
-	margin-bottom: 10px;
 	height: auto;
 	text-align: center;
 }
