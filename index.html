@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Coding | Coders spot</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simple template</title>
+	<meta name="author" content="Heet Pande">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="notice">Site will be active from: <p id="demo"></p></div>
-    </div>
+	<div class="container">
+	<h3>Site will be active from:</h3>
+	<div id="demo" class="time">
+		
+	</div>
+	<button id="refresh" class="btn">Refresh</button>
+</div>
 
 </body>
-<script>
+<script type="text/javascript">
+
     // Set the date we're counting down to
     var countDownDate = new Date("Nov 16, 2022 15:37:25").getTime();
     
@@ -43,5 +49,14 @@
         document.getElementById("demo").innerHTML = "EXPIRED";
       }
     }, 1000);
-    </script>
+
+    const reloadtButton = document.getElementById("refresh");
+    // Reload everything:
+    function reload() {
+        reload = location.reload();
+    }
+    // Event listeners for reload.
+    reloadtButton.addEventListener("click", reload, false);
+
+</script>
 </html>
